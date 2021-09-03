@@ -23,13 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Publishes to IPFS and returns CID in  ${{ steps.ipfs.outputs.hash }}
-      - name: Install pollinator
-        run: npm install -g  https://gitpkg.now.sh/pollinations/pollinations/app    
-
+      - name: Download pollinator
+        run:  curl https://raw.githubusercontent.com/pollinations/pollinations/dev/app/dist/pollinate.js -O pollinate.js
       - name: Check out hive repository code
         uses: actions/checkout@v2
       - name: Upload to IPFS and publish to IPNS  
-        run: DEBUG=* pollinate --send --once --ipns --nodeid ipns --path ${{ github.workspace }}
+        run: DEBUG=* node pollinate.js --send --once --ipns --nodeid ipns --path ${{ github.workspace }}
 
 
 
