@@ -25,7 +25,7 @@ jobs:
       # Publishes to IPFS and returns CID in  ${{ steps.ipfs.outputs.hash }}
       - name: Pollinate to IPFS
         run: |
-          cd "${GITHUB_WORKSPACE}"
+          "${GITHUB_WORKSPACE}/pollinate.sh"
           pwd
           ls -l
           ls -l ..
