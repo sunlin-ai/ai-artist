@@ -27,10 +27,10 @@ jobs:
         uses: aquiladev/ipfs-action@v0.1.6
         id: ipfs
         with:
-          path: ./Text-To-Image
+          path: ./testfolder
           host: ipfs.pollinations.ai
-          port: 5001
-          protocol: http
+          port: 443
+          protocol: https
           timeout: 180000
           verbose: true
 
