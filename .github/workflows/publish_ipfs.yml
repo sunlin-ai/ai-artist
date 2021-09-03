@@ -24,7 +24,7 @@ jobs:
     steps:
       # Publishes to IPFS and returns CID in  ${{ steps.ipfs.outputs.hash }}
       - name: Download pollinator
-        run:  curl https://raw.githubusercontent.com/pollinations/pollinations/dev/app/dist/pollinate.js -O
+        run:  curl https://raw.githubusercontent.com/pollinations/pollinations/dev/app/dist/pollinate.js --output pollinate.js
       - name: Check out hive repository code
         uses: actions/checkout@v2
       - name: Upload to IPFS and publish to IPNS  
