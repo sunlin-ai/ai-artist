@@ -24,7 +24,7 @@ jobs:
     steps:
       # Publishes to IPFS and returns CID in  ${{ steps.ipfs.outputs.hash }}
       - name: Pollinate to IPFS
-        run: pwd && ls -l
+        run: cd "${GITHUB_WORKSPACE}" && pwd && ls -l
 
       # - name: Upload to IPFS
       #   uses: aquiladev/ipfs-action@v0.1.6
