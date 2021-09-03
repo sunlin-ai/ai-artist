@@ -28,7 +28,7 @@ jobs:
       - name: Check out hive repository code
         uses: actions/checkout@v2
       - name: Upload to IPFS and publish to IPNS  
-        run: DEBUG=* node pollinate.js --send --once --ipns --nodeid ipns --path ${{ github.workspace }}
+        run: ls -l && DEBUG=* node pollinate.js --send --once --ipns --nodeid ipns --path ${{ github.workspace }}
 
 
 
