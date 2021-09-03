@@ -29,8 +29,8 @@ jobs:
         with:
           path: ./Text-To-Image
           host: ipfs.pollinations.ai
-          port: 443
-          protocol: https
+          port: 5001
+          protocol: http
           timeout: 180000
           verbose: true
 
