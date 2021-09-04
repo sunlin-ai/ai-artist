@@ -28,7 +28,7 @@ jobs:
       - name: Check out hive repository code
         uses: actions/checkout@v2
       - name: Restructure Folders to be in Pollinations format
-        run:  ${{ github.workspace }}/scripts/restructure_for_pollinations.js ${{ github.workspace }}/notebooks /tmp/pollinations
+        run:  ${{ github.workspace }}/scripts/restructure_for_pollinations.sh ${{ github.workspace }}/notebooks /tmp/pollinations
       - name: Upload to IPFS and publish to IPNS  
         run: ls -l && DEBUG=* node /tmp/pollinate.js --send --once --ipns --nodeid ipns --path /tmp/pollinations
 
