@@ -26,9 +26,11 @@ jobs:
       - name: Download pollinator
         run:  curl https://raw.githubusercontent.com/pollinations/pollinations/dev/app/dist/pollinate.js --output /tmp/pollinate.js
       - name: Check out hive repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2$
+      - name: Restructure Folders to be in Pollinations format
+        run:  ${{ github.workspace }}/scripts/restructure_for_pollinations.js ${{ github.workspace }}/notebooks /tmp/pollination_notebooks
       - name: Upload to IPFS and publish to IPNS  
-        run: ls -l && DEBUG=* node /tmp/pollinate.js --send --once --ipns --nodeid ipns --path ${{ github.workspace }}
+        run: ls -l && DEBUG=* node /tmp/pollinate.js --send --once --ipns --nodeid ipns --path ${{ /tmp/pollination_notebooks }}
 
 
 
