@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Copies the folder structure from this Github repository:
+#
+# /notebooks/Text-To-Image/1 CLIP-Guided VQGAN.ipynb
+# /notebooks/Text-To-Image/2 CLIP-Guided PixelDraw.ipynb
+# ...
+#
+# to the format pollinations expects:
+#
+# /Text-To-Image/1 CLIP-Guided VQGAN/input/notebook.ipynb
+# /Text-To-Image/12CLIP-Guided PixelDraw/input/notebook.ipynb
+# ...
+
 INPUT_PATH=$1
 OUTPUT_PATH=$2
 
