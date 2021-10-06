@@ -32,7 +32,7 @@ jobs:
       - name: Restructure Folders to be in Pollinations format
         run:  ${{ github.workspace }}/scripts/restructure_for_pollinations.sh ${{ github.workspace }}/notebooks /tmp/pollinations
       - name: Upload to IPFS and publish to IPNS  
-        run: ls -l && DEBUG=* node /tmp/pollinate.js --send --once --ipns --nodeid ipns --path /tmp/pollinations
+        run: ls -l && DEBUG=* node /tmp/pollinate.js --send --once --ipns --nodeid ipns --path /tmp/pollinations --debounce 1000 && sleep 5
 
 
 
