@@ -20,7 +20,7 @@ for categorypath in "$INPUT_PATH"/*; do
     category="$(basename -- "$categorypath")"
     echo $category
     dest_folder="$OUTPUT_PATH"/"$category"
-    mkdir -p $dest_folder
+    #mkdir -p $dest_folder
     for notebookpath in "$categorypath"/*.ipynb; do
         notebook=$(basename "$notebookpath" .ipynb)
         echo $notebook
