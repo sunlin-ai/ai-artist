@@ -21,7 +21,7 @@ jobs:
   ipfs-upload:
   
     runs-on: ubuntu-latest
-
+    timeout-minutes: 3
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Publishes to IPFS and returns CID in  ${{ steps.ipfs.outputs.hash }}
